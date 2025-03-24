@@ -1,7 +1,10 @@
+// app/main.js or app.js
 import Vue from 'nativescript-vue'
+import HomePage from './views/client/HomePage'
 
-import Home from './components/Home'
+// Uncomment the following to see NativeScript-Vue output logs
+Vue.config.silent = false
 
 new Vue({
-  render: (h) => h('frame', [h(Home)]),
+  render: h => h('frame', [h(HomePage)])
 }).$start()

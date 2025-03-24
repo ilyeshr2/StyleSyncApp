@@ -1,21 +1,295 @@
-@import '@nativescript/theme/core';
-@import '@nativescript/theme/default';
+// app/app.scss
 
-// Place any CSS rules you want to apply on both iOS and Android here.
-// This is where the vast majority of your CSS code goes.
+/*
+ * Core variables and style definitions
+ */
 
-// Font icon class
-.fab {
-  font-family: 'Font Awesome 5 Brands', 'fa-brands-400';
-  font-weight: 400;
+// Main color palette
+$primary-black: #000000;
+$secondary-brown: #8B7355;
+$background-cream: #F5F5F1;
+$text-white: #FFFFFF;
+$text-black: #000000;
+
+// Font families
+.font-regular {
+    font-family: "Montserrat-Regular", "Montserrat";
+    font-weight: normal;
 }
 
-.fas {
-  font-family: 'Font Awesome 5 Free', 'fa-solid-900';
-  font-weight: 900;
+.font-medium {
+    font-family: "Montserrat-Medium", "Montserrat";
+    font-weight: 500;
 }
 
-.far {
-  font-family: 'Font Awesome 5 Free', 'fa-regular-400';
-  font-weight: 400;
+.font-bold {
+    font-family: "Montserrat-Bold", "Montserrat";
+    font-weight: bold;
+}
+
+.font-black {
+    font-family: "Montserrat-Black", "Montserrat";
+    font-weight: 900;
+}
+
+// Text styles
+.h1 {
+    font-size: 32;
+    font-family: "Montserrat-Black", "Montserrat";
+    font-weight: 900;
+}
+
+.h2 {
+    font-size: 28;
+    font-family: "Montserrat-Bold", "Montserrat";
+    font-weight: bold;
+}
+
+.h3 {
+    font-size: 24;
+    font-family: "Montserrat-Bold", "Montserrat";
+    font-weight: bold;
+}
+
+.section-title {
+    font-size: 16;
+    font-family: "Montserrat-Bold", "Montserrat";
+    font-weight: bold;
+    color: $secondary-brown;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    font-size: 32;
+    font-family: "Montserrat-Black", "Montserrat";
+    font-weight: 900;
+    text-align: center;
+}
+
+.body-text {
+    font-size: 14;
+    font-family: "Montserrat-Regular", "Montserrat";
+    line-height: 1.5;
+}
+
+// Background colors
+.bg-primary {
+    background-color: $primary-black;
+}
+
+.bg-secondary {
+    background-color: $secondary-brown;
+}
+
+.bg-cream {
+    background-color: $background-cream;
+}
+
+// Text colors
+.text-primary {
+    color: $text-black;
+}
+
+.text-secondary {
+    color: $secondary-brown;
+}
+
+.text-light {
+    color: $text-white;
+}
+
+// Button styles
+.button-primary {
+    background-color: $primary-black;
+    color: $text-white;
+    font-family: "Montserrat-Bold", "Montserrat";
+    font-weight: bold;
+    font-size: 16;
+    padding: 15 30;
+    border-radius: 0;
+    height: 50;
+    text-transform: uppercase;
+}
+
+.button-secondary {
+    background-color: $secondary-brown;
+    color: $text-white;
+    font-family: "Montserrat-Bold", "Montserrat";
+    font-weight: bold;
+    font-size: 16;
+    padding: 15 30;
+    border-radius: 0;
+    height: 50;
+}
+
+.button-white {
+    background-color: $text-white;
+    color: $text-black;
+    font-family: "Montserrat-Bold", "Montserrat";
+    font-weight: bold;
+    font-size: 16;
+    padding: 15 30;
+    border-radius: 0;
+    height: 50;
+    text-transform: uppercase;
+}
+
+.button-outline {
+    background-color: transparent;
+    color: $text-white;
+    font-family: "Montserrat-Regular", "Montserrat";
+    font-weight: normal;
+    font-size: 14;
+    padding: 10 20;
+    border-width: 1;
+    border-color: $text-white;
+    border-radius: 0;
+    height: 40;
+}
+
+// Card styles
+.service-card {
+    border-radius: 10;
+    margin-bottom: 20;
+}
+
+.service-card-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10;
+    padding: 20;
+}
+
+// TextField styles
+.text-input {
+    font-family: "Montserrat-Regular", "Montserrat";
+    font-size: 14;
+    padding: 15;
+    background-color: $background-cream;
+    border-radius: 0;
+    border-width: 0;
+}
+
+// Layout spacing
+.section-padding {
+    padding: 40 20;
+}
+
+.section-margin {
+    margin: 40 0;
+}
+
+.item-margin {
+    margin: 10 0;
+}
+
+// Utility classes
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.full-width {
+    width: 100%;
+}
+
+// ActionBar styling
+ActionBar {
+    background-color: $primary-black;
+    color: $text-white;
+    font-family: "Montserrat-Bold", "Montserrat";
+    font-weight: bold;
+}
+
+// Page background
+Page {
+    background-color: $background-cream;
+}
+
+// Price list styling
+.price-item {
+    margin-bottom: 10;
+}
+
+.price-title {
+    font-family: "Montserrat-Regular", "Montserrat";
+    font-size: 16;
+}
+
+.price-value {
+    font-family: "Montserrat-Bold", "Montserrat";
+    font-weight: bold;
+    font-size: 16;
+}
+
+// Category headers
+.category-header {
+    font-family: "Montserrat-Bold", "Montserrat";
+    font-weight: bold;
+    font-size: 16;
+    color: $secondary-brown;
+    text-align: center;
+    margin: 20 0 15 0;
+}
+
+// Add specific padding for sections
+.hero-section {
+    height: 550;
+}
+
+.about-section {
+    padding: 40 20;
+    background-color: $background-cream;
+}
+
+.services-section {
+    padding: 40 20;
+    background-color: $primary-black;
+}
+
+.pricing-section {
+    padding: 40 20;
+    background-color: $background-cream;
+}
+
+.cta-section {
+    padding: 40 20;
+    background-color: $secondary-brown;
+}
+
+.contact-section {
+    padding: 40 20;
+    background-color: $primary-black;
+}
+
+// Social icons spacing
+.social-icons {
+    margin: 20 0;
+}
+
+// Newsletter styling
+.newsletter-input {
+    margin: 15 0;
+}
+
+// Footer styling
+.footer-text {
+    font-size: 12;
+    color: $text-white;
+    text-align: center;
 }
